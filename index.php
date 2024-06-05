@@ -21,7 +21,7 @@ header('location:dashboard.php');
             Login
           </div>
           <div class="card-body">
-            <form action="autentifikasi.php" method="POST">
+            <form action="authentication.php" method="POST">
               <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" name="username" required>
