@@ -2,46 +2,46 @@
 session_start();
 include_once('../../koneksi.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nama_suplier = $_POST['nama_suplier'];
+    $nama_supplier = $_POST['nama_supplier'];
     $alamat = $_POST['alamat'];
-    $telp = $_POST['telp'];
+    $telepon = $_POST['telepon'];
     $email = $_POST['email'];
     if ($_GET['act'] == "insert") {
-        $query = "INSERT INTO suplier (nama_suplier, alamat, telp, email) VALUES ('$nama_suplier','$alamat','$telp','$email')";
+        $query = "INSERT INTO supplier (nama_supplier, alamat, telepon, email) VALUES ('$nama_supplier','$alamat','$telepon','$email')";
         $exec = mysqli_query($koneksi, $query);
         if ($exec) {
-            $_SESSION['pesan'] = "Data suplier telah ditambahkan";
-            header('location:../../dashboard.php?modul=suplier');
+            $_SESSION['pesan'] = "Data supplier telah ditambahkan";
+            header('location:../../dashboard.php?modul=supplier');
         } else {
-            $_SESSION['pesan'] = "Data suplier gagal ditambahkan";
-            header('location:../../dashboard.php?modul=suplier');
+            $_SESSION['pesan'] = "Data supplier gagal ditambahkan";
+            header('location:../../dashboard.php?modul=supplier');
         }
     } elseif ($_GET['act'] == "update") {
         $id = $_GET['id'];
-        $query = "UPDATE suplier SET nama_suplier='$nama_suplier', alamat='$alamat', telp='$telp', email='$email' WHERE id='$id'";
+        $query = "UPDATE supplier SET nama_supplier='$nama_supplier', alamat='$alamat', telepon='$telepon', email='$email' WHERE id='$id'";
         $exec = mysqli_query($koneksi, $query);
         if ($exec) {
-            $_SESSION['pesan'] = "Data suplier telah diubah";
-            header('location:../../dashboard.php?modul=suplier');
+            $_SESSION['pesan'] = "Data supplier telah diubah";
+            header('location:../../dashboard.php?modul=supplier');
         } else {
-            $_SESSION['pesan'] = "Data suplier gagal diubah";
-            header('location:../../dashboard.php?modul=suplier');
+            $_SESSION['pesan'] = "Data supplier gagal diubah";
+            header('location:../../dashboard.php?modul=supplier');
         }
     }
 } else {
     if ($_GET['act'] == "delete") {
         $id = $_GET['id'];
-        $query = "DELETE FROM suplier WHERE id='$id'";
+        $query = "DELETE FROM supplier WHERE id='$id'";
         $exec = mysqli_query($koneksi, $query);
         if ($exec) {
-            $_SESSION['pesan'] = "Data suplier telah dihapus";
-            header('location:../../dashboard.php?modul=suplier');
+            $_SESSION['pesan'] = "Data supplier telah dihapus";
+            header('location:../../dashboard.php?modul=supplier');
         } else {
-            $_SESSION['pesan'] = "Data suplier gagal dihapus";
-            header('location:../../dashboard.php?modul=suplier');
+            $_SESSION['pesan'] = "Data supplier gagal dihapus";
+            header('location:../../dashboard.php?modul=supplier');
         }
     } else {
-        header('location:../../index.php');
+        header('location:../../login.php');
     }
 }
 ?>
