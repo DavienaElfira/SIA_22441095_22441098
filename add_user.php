@@ -8,7 +8,8 @@ $query = "INSERT INTO tb_pengguna (
     email,
     jabatan,
     hak_akses
-) VALUES (
+) 
+VALUES (
     'admin',
     '$password',
     'Administrator Web',

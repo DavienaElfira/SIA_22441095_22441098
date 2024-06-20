@@ -3,7 +3,7 @@
 if (!isset($_GET['modul']) || empty($_GET['modul'])) {
     include_once('modul/home/index.php');
 } else {
-    // Gunakan struktur percabangan switch-case untuk memuat modul yang sesuai
+
     switch ($_GET['modul']) {
         case "transaksi":
             include_once('modul/transaksi/index.php');
