@@ -9,7 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $jabatan = $_POST['jabatan'];
         $email = $_POST['email'];
         $hak_akses = $_POST['hak_akses'];
+<<<<<<< HEAD
         $query = "INSERT INTO tb_pengguna (username, password, nama_lengkap, jabatan, email, hak_akses) VALUES ('$username', '$password', '$nama_lengkap', '$jabatan', '$email', '$hak_akses')";
+=======
+        $query = "INSERT INTO pengguna (username, password, nama_lengkap, jabatan, email, hak_akses) VALUES ('$username', '$password', '$nama_lengkap', '$jabatan', '$email', '$hak_akses')";
+>>>>>>> 3685a77bdaceeae07c47d1c192b3fb7df21e961c
         $exec = mysqli_query($koneksi, $query);
         if ($exec) {
             $_SESSION['pesan'] = "Data pengguna berhasil ditambah";
@@ -26,10 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         $hak_akses = $_POST['hak_akses'];
         if (empty($password)) {
+<<<<<<< HEAD
             $query = "UPDATE tb_pengguna SET nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' WHERE username = '$username'";
         } else {
             $password = password_hash($password, PASSWORD_BCRYPT);
             $query = "UPDATE tb_pengguna SET password = '$password', nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' WHERE username = '$username'";
+=======
+            $query = "UPDATE pengguna SET nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' WHERE username = '$username'";
+        } else {
+            $password = password_hash($password, PASSWORD_BCRYPT);
+            $query = "UPDATE pengguna SET password = '$password', nama_lengkap = '$nama_lengkap', jabatan = '$jabatan', email = '$email', hak_akses = '$hak_akses' WHERE username = '$username'";
+>>>>>>> 3685a77bdaceeae07c47d1c192b3fb7df21e961c
         }
         $exec = mysqli_query($koneksi, $query);
         if ($exec) {
@@ -43,7 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     if ($_GET['act'] == "delete") {
         $id = $_GET['id'];
+<<<<<<< HEAD
         $query = "DELETE FROM tb_pengguna WHERE id = '$id'";
+=======
+        $query = "DELETE FROM pengguna WHERE id = '$id'";
+>>>>>>> 3685a77bdaceeae07c47d1c192b3fb7df21e961c
         $exec = mysqli_query($koneksi, $query);
         if ($exec) {
             $_SESSION['pesan'] = "Data pengguna berhasil dihapus";
@@ -53,7 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('location:../../dashboard.php?modul=pengguna');
         }
     } else {
+<<<<<<< HEAD
         header('location:../../index.php');
+=======
+        header('location:../../login.php');
+>>>>>>> 3685a77bdaceeae07c47d1c192b3fb7df21e961c
     }
 }
 ?>

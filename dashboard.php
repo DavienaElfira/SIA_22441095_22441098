@@ -23,7 +23,11 @@
             <div class="col-md-3 text-bg-dark" style="min-height:100vh">
                 <div class="text-center pt-4">
                     <i class="bi bi-cash-coin fs-1 text-success"></i>
+<<<<<<< HEAD
             <h3>Sistem Informasi Akuntansi </h3>
+=======
+                    <h3>Sistem Informasi Akuntansi</h3>
+>>>>>>> 3685a77bdaceeae07c47d1c192b3fb7df21e961c
                 </div>
                 <div class="pt-4">
                     <!-- Include Sidebar Content -->
